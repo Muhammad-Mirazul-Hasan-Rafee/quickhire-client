@@ -13,16 +13,18 @@ const Navbar = () => {
       </div>
       {/* nav btns container */}
       <div className="navbar-center gap-x-2 hidden lg:flex ">
+        <button className="btn btn-soft btn-primary">Admin View</button>
         <button className="btn btn-soft btn-primary">Find Jobs</button>
         <button className="btn btn-soft btn-primary">Browse Companies</button>
       </div>
 
       <div className="navbar-end gap-x-6">
-        <button className="btn btn-dash btn-primary w-[92px] h-[50px] px-6 py-3 epilogue-font">
-          Login
-        </button>
-        <div className="border text-[#D6DDEB] h-12"></div>
-        <button className="btn btn-primary w-[108px] h-[50px] px-6 py-3 epilogue-font text-[#FFFFFF]">
+       <button className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">
+  Login
+</button>
+
+        <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
+        <button className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] ">
           Sign Up
         </button>
 
@@ -47,10 +49,16 @@ const Navbar = () => {
           </div>
           <li
             tabIndex="-1"
-            className="menu menu-sm mr-12 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm mr-8 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
+            <button className=" epilogue-font">
+          Login
+        </button>
+         <button className="epilogue-font">
+          Sign Up
+        </button>
             <button className="text-center">Find Jobs</button>
-            <button className="text-center">Browse <br />Companies</button>
+            <button className="text-center">Browse Companies</button>
           </li>
         </div>
       </div>
