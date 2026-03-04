@@ -1,0 +1,6 @@
+.hero-right-bg{
+  background-image: url('../../../assets/Hero/heroBg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

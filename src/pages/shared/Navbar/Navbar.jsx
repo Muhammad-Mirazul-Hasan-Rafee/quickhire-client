@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../../assets/Navbar/navbarIcon.svg";
 const Navbar = () => {
   return (
-    <div className="flex justify-between bg-base-100 shadow-sm mx-5">
+    <div className="flex justify-between bg-base-100 shadow-sm mx-8">
       <div className="navbar-start ">
         <div className="flex gap-4">
           <img src={Logo} className="w-10 h-9" alt="" />
