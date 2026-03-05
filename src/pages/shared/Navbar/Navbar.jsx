@@ -20,9 +20,9 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-x-6">
-       <button className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">
+       <Link to="/login" className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">
   Login
-</button>
+</Link>
 
         <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
         <Link to="/signup" className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] ">
@@ -52,12 +52,12 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm mr-8 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <button className=" epilogue-font">
+            <Link to="/login" className=" epilogue-font">
           Login
-        </button>
-         <button className="epilogue-font">
+        </Link>
+         <Link  to="/signup" className="epilogue-font">
           Sign Up
-        </button>
+        </Link>
             <button className="text-center">Find Jobs</button>
             <button className="text-center">Browse Companies</button>
           </li>
