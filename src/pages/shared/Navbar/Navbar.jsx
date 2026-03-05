@@ -1,4 +1,5 @@
-import React from "react";
+
+import { Link } from "react-router-dom";
 import Logo from "../../../assets/Navbar/navbarIcon.svg";
 const Navbar = () => {
   return (
@@ -24,9 +25,9 @@ const Navbar = () => {
 </button>
 
         <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
-        <button className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] ">
+        <Link to="/signup" className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] ">
           Sign Up
-        </button>
+        </Link>
 
         {/* dropdown */}
         <div className="dropdown">
