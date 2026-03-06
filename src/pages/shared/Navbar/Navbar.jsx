@@ -1,7 +1,16 @@
-
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/Navbar/navbarIcon.svg";
+import { useContext } from "react";
+import AuthContext from "../../../context/AuthContext/AuthContext";
 const Navbar = () => {
+  const { user , logoutUser } = useContext(AuthContext);
+  const handleLogout = ()=>{
+    logoutUser()
+    .then(()=>{
+      console.log('Logout successfull!!');
+    })
+    .catch((err)=>  console.log('Logout unsuccessfull!!' , err))
+  };
   return (
     <div className="flex justify-between bg-base-100 shadow-sm mx-8">
       <div className="navbar-start ">
@@ -20,14 +29,25 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-x-6">
-       <Link to="/login" className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">
-  Login
-</Link>
-
-        <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
-        <Link to="/signup" className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] ">
-          Sign Up
-        </Link>
+        {user ? (
+          <><button onClick={handleLogout} className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">Logout</button></>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
+            >
+              <button>Login</button>
+            </Link>
+            <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
+            <Link
+              to="/signup"
+              className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] "
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
 
         {/* dropdown */}
         <div className="dropdown">
@@ -52,12 +72,25 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm mr-8 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <Link to="/login" className=" epilogue-font">
-          Login
-        </Link>
-         <Link  to="/signup" className="epilogue-font">
-          Sign Up
-        </Link>
+                   {user ? (
+          <><button onClick={handleLogout} className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">Logout</button></>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
+            >
+              <button>Login</button>
+            </Link>
+            <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
+            <Link
+              to="/signup"
+              className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] "
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
             <button className="text-center">Find Jobs</button>
             <button className="text-center">Browse Companies</button>
           </li>

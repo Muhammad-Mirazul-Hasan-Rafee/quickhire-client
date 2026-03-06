@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from '../../context/AuthContext/AuthContext';
 
 const Login = () => {
-  
+  const {loginUser} = useContext(AuthContext);
   const handleLogin= (e)=>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -9,6 +10,15 @@ const Login = () => {
     console.log(email , password);
 
     // password validation
+
+       loginUser(email , password)
+   .then(result =>{
+    console.log('Login successfull' , result.user);
+   })
+   .catch(error =>{
+    console.log('Login failed' , error);
+   })
+
     
   };
     return (
