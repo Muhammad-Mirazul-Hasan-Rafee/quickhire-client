@@ -17,7 +17,7 @@ const Main = () => {
 
 
   return (
-    <div className="w-full py-5">
+    <div className="w-full py-5 mt-8">
 
       <p className="text-lg font-semibold mb-10">
         Companies we helped grow
@@ -27,7 +27,7 @@ const Main = () => {
 
     
   {/* Explore Category */}
-      <div className="flex justify-between items-center w-[1192px] h-[53px]">
+      <div className="mt-40 lg:flex justify-between items-center w-[1192px] h-[53px] sm:grid sm:grid-cols-1 sm:gap-y-24">
         <aside className="text-5xl font-semibold">
             Explore by <span className="text-[#26A4FF]">category</span>
         </aside>

@@ -24,7 +24,7 @@ const Navbar = () => {
       {/* nav btns container */}
       <div className="navbar-center gap-x-2 hidden lg:flex ">
         <button className="btn btn-soft btn-primary">Admin View</button>
-        <button className="btn btn-soft btn-primary">Find Jobs</button>
+        <Link to="/alljobs"><button className="btn btn-soft btn-primary">Find Jobs</button></Link>
         <button className="btn btn-soft btn-primary">Browse Companies</button>
       </div>
 

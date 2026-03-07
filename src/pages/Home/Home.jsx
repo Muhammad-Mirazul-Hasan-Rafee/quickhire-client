@@ -52,13 +52,15 @@ const Home = () => {
           <div className="flex items-center gap-2">
             <CiLocationOn />
             <select
-              defaultValue="Server location"
+              defaultValue="select location"
               className="select select-neutral w-full"
             >
-              <option disabled>Server location</option>
-              <option>North America</option>
-              <option>EU west</option>
-              <option>South East Asia</option>
+              <option disabled>select location</option>
+              <option>Dhaka</option>
+              <option>Chittagong</option>
+              <option>Cumilla</option>
+              <option>Rajshahi</option>
+              <option>Sylhet</option>
             </select>
           </div>
 
