@@ -27,12 +27,12 @@ const Main = () => {
 
     
   {/* Explore Category */}
-      <div className="flex justify-between items-center w-[1192px] h-[53px] border border-amber-400">
+      <div className="flex justify-between items-center w-[1192px] h-[53px]">
         <aside className="text-5xl font-semibold">
             Explore by <span className="text-[#26A4FF]">category</span>
         </aside>
         <aside>
-            <Link to="" className="flex gap-x-3 items-center text-[#4640DE]">Show all jobs <span><IoIosArrowRoundForward /></span></Link>
+            <Link to="/alljobs" className="flex gap-x-3 items-center text-[#4640DE]">Show all jobs <span><IoIosArrowRoundForward /></span></Link>
         </aside>
       </div>
     </div>

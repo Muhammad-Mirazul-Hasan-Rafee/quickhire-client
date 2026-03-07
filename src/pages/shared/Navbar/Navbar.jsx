@@ -14,12 +14,12 @@ const Navbar = () => {
   return (
     <div className="flex justify-between bg-base-100 shadow-sm mx-8">
       <div className="navbar-start ">
-        <div className="flex gap-4">
+        <Link to="/" className="flex gap-4">
           <img src={Logo} className="w-10 h-9" alt="" />
           <h3 className="w-9 font-bold text-2xl red-hat-display-font ">
             QuickHire
           </h3>
-        </div>
+        </Link>
       </div>
       {/* nav btns container */}
       <div className="navbar-center gap-x-2 hidden lg:flex ">
