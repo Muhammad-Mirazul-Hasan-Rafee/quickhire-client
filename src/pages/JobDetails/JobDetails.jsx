@@ -5,7 +5,7 @@ const JobDetails = () => {
     const {_id , company_logo , title , company , jobType , category , location , applicationDeadline , salaryRange , description , requirements ,responsibilities , hr_email} = useLoaderData();
   
   return (
-    <div className="max-w-6xl mx-auto px-4 my-10">
+    <div className="max-w-6xl mx-8 px-4 my-10">
       <div className="card bg-base-100 shadow-md">
         {/* ================= Header ================= */}
         <div className="flex flex-col sm:flex-row gap-4 p-5 border-b">

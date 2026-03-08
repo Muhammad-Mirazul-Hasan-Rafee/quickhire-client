@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/Navbar/navbarIcon.svg";
 import { useContext } from "react";
 import AuthContext from "../../../context/AuthContext/AuthContext";
@@ -24,8 +24,9 @@ const Navbar = () => {
       {/* nav btns container */}
       <div className="navbar-center gap-x-2 hidden lg:flex ">
         <button className="btn btn-soft btn-primary">Admin View</button>
-        <Link to="/alljobs"><button className="btn btn-soft btn-primary">Find Jobs</button></Link>
+        <NavLink to="/alljobs"><button className="btn btn-soft btn-primary">Find Jobs</button></NavLink>
         <button className="btn btn-soft btn-primary">Browse Companies</button>
+        <NavLink to="/myapplications" className="btn btn-soft btn-primary">My Applications</NavLink>
       </div>
 
       <div className="navbar-end gap-x-6">

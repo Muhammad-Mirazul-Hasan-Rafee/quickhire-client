@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const JobApply = () => {
   const { id } = useParams();
   const { user } = UseAuth();
+  const navigate = useNavigate();
   const handleSubmitApplication = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,8 +32,8 @@ const JobApply = () => {
             icon: "success",
             draggable: true,
           });
-
           e.target.reset(); 
+          navigate('/myapplications');
           
         }
       })
@@ -42,7 +43,7 @@ const JobApply = () => {
     
   };
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4 bg-slate-900">
+    <div className="min-h-[70vh] flex items-center justify-center px-4 bg-slate-900 mx-8">
       <div className="card bg-base-100 w-full max-w-xl shadow-2xl border text-black">
         <div className="card-body">
           <h3 className="text-3xl md:text-4xl text-center font-bold mb-4">
