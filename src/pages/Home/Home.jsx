@@ -3,7 +3,7 @@ import heroBg from "../../assets/Hero/heroBg.svg";
 import Hero from "../../assets/Hero/hero.svg";
 import { CiSearch, CiLocationOn } from "react-icons/ci";
 import Main from "./Main";
-import HotJobs from "./HotJobs";
+
 const Home = () => {
 
   return (

@@ -23,9 +23,6 @@ const Main = () => {
         Companies we helped grow
       </p>
 
-  
-
-    
   {/* Explore Category */}
       <div className="mt-40 lg:flex justify-between items-center w-[1192px] h-[53px] sm:grid sm:grid-cols-1 sm:gap-y-24">
         <aside className="text-5xl font-semibold">
