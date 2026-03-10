@@ -3,16 +3,24 @@ import Logo from "../../../assets/Navbar/navbarIcon.svg";
 import { useContext } from "react";
 import AuthContext from "../../../context/AuthContext/AuthContext";
 const Navbar = () => {
-  const { user , logoutUser } = useContext(AuthContext);
-  const handleLogout = ()=>{
+  const { loading, user, logoutUser } = useContext(AuthContext);
+  const handleLogout = () => {
     logoutUser()
-    .then(()=>{
-      console.log('Logout successfull!!');
-    })
-    .catch((err)=>  console.log('Logout unsuccessfull!!' , err))
+      .then(() => {
+        console.log("Logout successfull!!");
+      })
+      .catch((err) => console.log("Logout unsuccessfull!!", err));
   };
+  // loading
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-12">
+        <span className="loading loading-spinner text-primary"></span>
+      </div>
+    );
+  }
   return (
-    <div className="flex justify-between bg-base-100 shadow-sm mx-8">
+    <div className="flex justify-between bg-base-100   shadow-sm mx-8">
       <div className="navbar-start ">
         <Link to="/" className="flex gap-4">
           <img src={Logo} className="w-10 h-9" alt="" />
@@ -23,22 +31,64 @@ const Navbar = () => {
       </div>
       {/* nav btns container */}
       <div className="navbar-center gap-x-2 hidden lg:flex ">
-        <button className="btn btn-soft btn-primary">Admin View</button>
-        <NavLink to="/alljobs"><button className="btn btn-soft btn-primary">Find Jobs</button></NavLink>
-        <button className="btn btn-soft btn-primary">Browse Companies</button>
-        <NavLink to="/myapplications" className="btn btn-soft btn-primary">My Applications</NavLink>
+        <NavLink
+          to="/addjobs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-yellow-400 font-bold btn bg-slate-950 "
+              : "text-[#4640DE] btn btn-soft btn-primary"
+          }
+        >
+          Admin View
+        </NavLink>
+        <NavLink
+          to="/alljobs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-yellow-400 font-bold btn bg-slate-950 "
+              : "text-[#4640DE] btn btn-soft btn-primary"
+          }
+        >
+          Find Jobs
+        </NavLink>
+        <NavLink to="/companies"
+          className={({ isActive }) =>
+            isActive
+              ? "text-yellow-400 font-bold btn bg-slate-950 "
+              : "text-[#4640DE] btn btn-soft btn-primary"
+          }
+        >
+          Browse Companies
+        </NavLink>
+        <NavLink
+          to="/myapplications"
+          className={({ isActive }) =>
+            isActive
+              ? "text-yellow-400 font-bold btn bg-slate-950 "
+              : "text-[#4640DE] btn btn-soft btn-primary"
+          }
+        >
+          My Applications
+        </NavLink>
       </div>
 
       <div className="navbar-end gap-x-6">
         {user ? (
-          <><button onClick={handleLogout} className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">Logout</button></>
+          <>
+            <Link
+              onClick={handleLogout}
+              className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
+            >
+              Logout
+            </Link>
+          </>
         ) : (
           <>
             <Link
               to="/login"
               className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
             >
-              <button>Login</button>
+              Login
             </Link>
             <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
             <Link
@@ -73,25 +123,32 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm mr-8 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-                   {user ? (
-          <><button onClick={handleLogout} className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font">Logout</button></>
-        ) : (
-          <>
-            <Link
-              to="/login"
-              className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
-            >
-              <button>Login</button>
-            </Link>
-            <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
-            <Link
-              to="/signup"
-              className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] "
-            >
-              Sign Up
-            </Link>
-          </>
-        )}
+            {user ? (
+              <>
+                <button
+                  onClick={handleLogout}
+                  className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="hidden lg:inline-block btn btn-dash btn-primary lg:w-[92px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font"
+                >
+                  <button>Login</button>
+                </Link>
+                <div className="border text-[#D6DDEB] h-12 hidden lg:inline-block"></div>
+                <Link
+                  to="/signup"
+                  className="hidden lg:inline-block btn btn-primary lg:w-[108px] lg:h-[50px] lg:px-6 lg:py-3 lg:epilogue-font lg:text-[#FFFFFF] "
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
             <button className="text-center">Find Jobs</button>
             <button className="text-center">Browse Companies</button>
           </li>

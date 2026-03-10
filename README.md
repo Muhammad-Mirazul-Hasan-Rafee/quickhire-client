@@ -1,18 +1,94 @@
-# React + Vite
+# QuickHire - Job Portal (Client)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QuickHire is a full stack job portal web application where users can explore jobs, view job details, and apply for jobs. It includes authentication using Firebase and allows users to manage their job applications.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (Login, Signup, Logout) using Firebase
+- Display all available jobs
+- Job details page
+- Apply for jobs using a job application form
+- View applied jobs in a table
+- Context API used for global authentication state
+- Responsive UI
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- React Router
+- Context API
+- Firebase Authentication
+- Axios
+- Tailwind CSS / DaisyUI
 
-Note: This will impact Vite dev & build performances.
+## ⚙️ Environment Variables
 
-## Expanding the ESLint configuration
+Create a `.env` file in the root of the client project and add the following variables:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+VITE_apiKey=AIzaSyArU6Aqw68EXaGQhYcwOeIjoJcL6-x7dNs
+VITE_authDomain=quick-hire-6fa81.firebaseapp.com
+VITE_projectId=quick-hire-6fa81
+VITE_storageBucket=quick-hire-6fa81.firebasestorage.app
+VITE_messagingSenderId=366828791519
+VITE_appId=1:366828791519:web:5fdf79d8b53def5887eb6a
+VITE_measurementId=G-PJXLKYMDWL
+
+
+These variables are used to initialize Firebase authentication.
+
+## 📦 Installation
+
+Clone the repository:
+
+
+git clone https://github.com/Muhammad-Mirazul-Hasan-Rafee/quickhire-client.git
+
+
+Go to the project directory:
+
+
+cd quichire-client
+
+
+Install dependencies:
+
+
+npm install
+
+
+Run the development server:
+
+
+npm run dev
+
+
+The app will run at:
+
+
+http://localhost:5173
+
+
+## 📂 Project Structure
+
+
+src
+├─ components
+├─ pages
+├─ context
+├─ routes
+├─ firebase
+└─ App.jsx
+
+
+## 🔗 Backend API
+
+The client communicates with the backend server to:
+
+- Fetch jobs
+- Submit job applications
+- Fetch applied jobs
+
+## 👨‍💻 Author
+
+Hasan Rafee

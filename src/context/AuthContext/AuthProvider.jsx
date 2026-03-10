@@ -34,7 +34,7 @@ const logoutUser = ()=>{
         return()=>{
             unsubscribe();
         }
-    },[])
+    },[]);
 
 
  
