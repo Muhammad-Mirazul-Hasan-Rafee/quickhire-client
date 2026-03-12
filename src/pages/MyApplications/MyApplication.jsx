@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const MyApplications = () => {
   const { user } = UseAuth();
@@ -41,9 +42,14 @@ const MyApplications = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/job-application?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setAppliedJobs(data));
+    // fetch(`http://localhost:5000/job-application?email=${user.email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => setAppliedJobs(data));
+
+    axios.get(`http://localhost:5000/job-application?email=${user.email}`,{withCredentials: true})
+    .then(res => setAppliedJobs(res.data))
+
+
   }, [user.email]);
 
   return (

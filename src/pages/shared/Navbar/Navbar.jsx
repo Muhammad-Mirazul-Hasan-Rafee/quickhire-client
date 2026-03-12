@@ -41,6 +41,18 @@ const Navbar = () => {
         >
           Admin View
         </NavLink>
+
+        <NavLink
+          to="/myPostedJobs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-yellow-400 font-bold btn bg-slate-950 "
+              : "text-[#4640DE] btn btn-soft btn-primary"
+          }
+        >
+          Posted Jobs
+        </NavLink>
+
         <NavLink
           to="/alljobs"
           className={({ isActive }) =>
@@ -51,7 +63,8 @@ const Navbar = () => {
         >
           Find Jobs
         </NavLink>
-        <NavLink to="/companies"
+        <NavLink
+          to="/companies"
           className={({ isActive }) =>
             isActive
               ? "text-yellow-400 font-bold btn bg-slate-950 "

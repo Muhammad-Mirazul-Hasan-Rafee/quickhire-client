@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useAuth from "../hooks/UseAuth";
+import useAuth from "../../Hooks/UseAuth";
 import { Link } from "react-router-dom";
 
 const MyPostedJobs = () => {

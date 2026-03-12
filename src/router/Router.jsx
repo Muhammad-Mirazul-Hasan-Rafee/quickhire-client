@@ -10,7 +10,7 @@ import JobApply from "../pages/JobApply/JobApply";
 import MyApplications from "../pages/MyApplications/MyApplication";
 import AddJob from "../pages/AddJob/AddJob";
 import Companies from "../pages/Companies/Companies";
-
+import MyPostedJobs from "../pages/MyPostedJobs/MyPostedJobs";
 const router = createBrowserRouter([
   {
     path: "/",
